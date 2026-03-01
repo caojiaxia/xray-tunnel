@@ -36,14 +36,18 @@ services:
 ```
 
 ### 启动命令
+
+- 1
 ```
-- 1 docker compose pull
+docker compose pull
 ```
+- 2
 ```
-- 2 docker compose up -d
+docker compose up -d
 ```
+- 3
 ```
-- 3 docker logs -f xray-tunnel
+ docker logs -f xray-tunnel
 ```
 
 
