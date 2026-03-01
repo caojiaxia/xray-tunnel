@@ -71,3 +71,6 @@ docker compose up -d
 | 伪装路径 (Path) | /你的路径                                                                     |
 | 传输安全 (TLS)t | 开启 (ON)                                                                     |
 | SNI | tunnel.abc.com (你刚才在 CF 设置的子域名)     |
+| 指纹 (Fingerprint) | chrome 或 randomized          |
+| ALPN  |   h2, http/1.1    |
+| 跳过证书验证(allowlnsecure) |  false      |
