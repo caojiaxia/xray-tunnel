@@ -56,6 +56,12 @@ docker compose up -d
 | ----------- | --------------------------------------------------------------------      |
 | Type |   HTTP                                                                           |
 | URL  | localhost:8080                                                                   |
+**详细步骤**
+
+<img width="1409" alt="image" src="https://user-images.githubusercontent.com/92626977/218253461-c079cddd-3f4c-4278-a109-95229f1eb299.png">
+
+<img width="1619" alt="image" src="https://user-images.githubusercontent.com/92626977/218253838-aa73b63d-1e8a-430e-b601-0b88730d03b0.png">
+
 <img width="1155" alt="image" src="https://user-images.githubusercontent.com/92626977/218253971-60f11bbf-9de9-4082-9e46-12cd2aad79a1.png">
 
 ## 客户端参数配置
