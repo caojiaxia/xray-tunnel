@@ -56,7 +56,7 @@ docker compose up -d
 | ----------- | --------------------------------------------------------------------      |
 | Type |   HTTP                                                                           |
 | URL  | localhost:8080                                                                   |
-
+<img width="1155" alt="image" src="https://user-images.githubusercontent.com/92626977/218253971-60f11bbf-9de9-4082-9e46-12cd2aad79a1.png">
 
 ## 客户端参数配置
 **请严格对照以下参数修改你的客户端（如 v2rayN, Clash Meta 等）**
