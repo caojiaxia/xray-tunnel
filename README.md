@@ -57,7 +57,7 @@ docker compose up -d
 | Type |   HTTP                                                                           |
 | URL  | localhost:8080 
 
-**详细步骤**
+**详细步骤：**
 
 <img width="1409" alt="image" src="https://user-images.githubusercontent.com/92626977/218253461-c079cddd-3f4c-4278-a109-95229f1eb299.png">
 
