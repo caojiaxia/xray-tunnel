@@ -15,7 +15,7 @@ read -p "请输入你的 XPATH [默认: /GEdhhrQEkzaq]: " XPATH
 XPATH=${XPATH:-/GEdhhrQEkzaq}
 
 # 定义镜像名 (替换成你自己的)
-IMAGE="ghcr.io/你的用户名/你的仓库名:latest"
+IMAGE="ghcr.io/caojiaxia/xray-tunnel:main"
 
 echo "正在停止并删除旧容器 (如果存在)..."
 docker rm -f xray-tunnel 2>/dev/null
