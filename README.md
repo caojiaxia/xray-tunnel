@@ -35,10 +35,20 @@ services:
     image: ghcr.io/caojiaxia/xray-ag:latest
     container_name: xray-tunnel
     restart: always
+
     environment:
-      UUID: xxxxxx             #你的UUID
-      XPATH: /xxxxxx           #你的路径
-      TUNNEL_TOKEN: xxxxxxx    #你的隧道Token
+      UUID: xxxxxx              # ⭐你的UUID
+      XPATH: /xxxxxx            # ⭐你的路径
+      TUNNEL_TOKEN: xxxxxxx     # ⭐Tunnel Token
+      TUNNEL_DOMAIN: xxxxxx     # ⭐你的隧道域名
+
+    network_mode: host
+
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
 ```
 
 ### 启动命令
