@@ -32,7 +32,7 @@ curl -L "https://hub.gitmirror.com/https://github.com/docker/compose/releases/la
 ```yml      
 services:
   xray-tunnel:
-    image: pull ghcr.io/caojiaxia/xray-tunnel:main
+    image: ghcr.io/caojiaxia/xray-tunnel:main
     container_name: xray-tunnel
     restart: always
 
