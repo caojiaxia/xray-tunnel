@@ -73,10 +73,28 @@ install_tunnel() {
     echo -e "${BLUE}正在拉取镜像... ${NC}"
     docker pull $TUNNEL_IMAGE > /dev/null &
     progress_bar 15
-    
+
     docker rm -f xray-tunnel 2>/dev/null
-    docker run -d --name xray-tunnel --restart always \
-        -e TUNNEL_TOKEN="$TOKEN" -e UUID="$MY_UUID" -e XPATH="$MY_XPATH" $TUNNEL_IMAGE
+    docker run -d --name xray-tunnel \
+        --restart always \
+        --memory="2g" \
+        --memory-reservation="512m" \
+        --cpus="2.0" \
+        --ulimit nofile=65535:65535 \
+        --log-opt max-size=50m --log-opt max-file=3 \
+        -e TUNNEL_TOKEN="$TOKEN" \
+        -e UUID="$MY_UUID" \
+        -e XPATH="$MY_XPATH" \
+        $TUNNEL_IMAGE
+
+    # 2. 自动写入 Crontab 守护任务
+    # 先删除旧的重复任务，防止多次运行脚本导致 crontab 爆炸
+    (crontab -l 2>/dev/null | grep -v "xray-tunnel ps aux") | crontab -
+    
+    # 写入新的守护任务：每 5 分钟检查一次，若 xray 进程消失则重启容器
+    (crontab -l 2>/dev/null; echo "*/5 * * * * if [ -z \"\$(docker exec xray-tunnel ps aux | grep xray | grep -v grep)\" ]; then docker restart xray-tunnel; fi") | crontab -
+
+    echo -e "${GREEN}守护进程已激活：每 5 分钟自动巡检 Xray 状态。${NC}"
     
     # 整合所有参数
     local FULL_LINK="vless://$MY_UUID@$MY_DOMAIN:443?path=$MY_XPATH&security=tls&encryption=none&type=ws&host=$MY_HOST&sni=$MY_HOST&fp=chrome&alpn=h2,http/1.1#CF_WS_${MY_TYPE}_$MY_DOMAIN"
