@@ -3,6 +3,11 @@
 bash <(curl -Ls https://raw.githubusercontent.com/caojiaxia/xray-tunnel/main/xray-tool.sh)
 ```
 
+### 如果xray失效(节点不通），请用以下命令重启容器
+```
+docker restart xray-tunnel
+```
+
 
 ### 使用教程
 **Docker环境部署**
