@@ -47,7 +47,7 @@ services:
       TUNNEL_TOKEN: xxxxxxx     # ⭐Tunnel Token
       TUNNEL_DOMAIN: xxxxxx     # ⭐你的隧道域名
 
-    network_mode: host
+    # network_mode: host
 
     logging:
       driver: "json-file"
