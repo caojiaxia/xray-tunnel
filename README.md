@@ -40,7 +40,7 @@ services:
     image: ghcr.io/caojiaxia/xray-tunnel:main
     container_name: xray-tunnel
     restart: always
-    network_mode: host          # ⭐启用宿主机网络而非桥接网络，如果不需要直接删掉这一行即可。 建议选上， CF tunnel走桥接网络性能一般。（可选）
+    network_mode: host  # ⭐启用宿主机网络而非桥接网络，如果不需要直接删掉这一行即可。 建议选上， CF tunnel走桥接网络性能一般。（可选）
 
     environment:
       UUID: xxxxxx              # ⭐你的UUID
