@@ -40,6 +40,7 @@ services:
     image: ghcr.io/caojiaxia/xray-tunnel:main
     container_name: xray-tunnel
     restart: always
+    network_mode: host
 
     environment:
       UUID: xxxxxx              # ⭐你的UUID
