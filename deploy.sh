@@ -36,4 +36,16 @@ docker run -d \
   -e UUID=$UUID \
   -e XPATH=$XPATH \
   -e DOMAIN_STRATEGY=$DOMAIN_STRATEGY \
-  $IMAGEE
+  $IMAGE
+
+# 5. 状态检查
+echo "-----------------------------------------------"
+echo "正在检查容器运行状态..."
+sleep 3
+if [ "$(docker inspect -f '{{.State.Running}}' xray-tunnel)" == "true" ]; then
+    echo "✅ 容器已成功启动！"
+    echo "正在获取初始日志 (前 5 行)..."
+    docker logs --tail 5 xray-tunnel
+else
+    echo "❌ 容器启动失败，请检查 TOKEN 是否正确或查看 logs。"
+fi
