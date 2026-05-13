@@ -43,10 +43,10 @@ services:
     network_mode: host  # ⭐启用宿主机网络而非桥接网络，如果不需要直接删掉这一行即可。 建议选上， CF tunnel走桥接网络性能一般。（可选）
 
     environment:
-      UUID: xxxxxx              # ⭐你的UUID
-      XPATH: /xxxxxx            # ⭐你的路径
-      TUNNEL_TOKEN: xxxxxxx     # ⭐Tunnel Token
-      TUNNEL_DOMAIN: xxxxxx     # ⭐你的隧道域名
+      UUID: "xxxxxx"              # ⭐你的UUID
+      XPATH: "/xxxxxx"            # ⭐你的路径
+      TUNNEL_TOKEN: "xxxxxxx"     # ⭐Tunnel Token
+      TUNNEL_DOMAIN: "xxxxxx"     # ⭐你的隧道域名
       DOMAIN_STRATEGY: UseIPv6        # ⭐IPv6优先  （可选）
       TUNNEL_EDGE_IP_VERSION: 6       # ⭐强制隧道连接 CF 的 IPv6 节点（可选）
 
